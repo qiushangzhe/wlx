@@ -10,7 +10,7 @@
       <img src="../assets/logo.png" alt="logo" class="header-logo">
       <ul class="nav">
           <li v-for="item in navdata" class="nav-item">
-              {{item.name}}
+              <span>{{item.name}}</span>
           </li>
       </ul>
   </div>
@@ -59,6 +59,7 @@ export default {
         height:110px;
         background-color:#000;
         text-align: left;
+        box-shadow: 1px #fff;
         .header-logo{
             margin-left:50px;
             vertical-align: middle;
@@ -66,10 +67,8 @@ export default {
         ul.nav{
             display: inline-block;
             margin-left:120px;
-            transition: 1s;
         }
         .nav-item{
-
             color:#fff;
             display:inline-block;
             line-height:110px;
@@ -77,6 +76,11 @@ export default {
             padding:0px 25px;
             font-weight: 600;
             position:relative;
+            z-index:1;
+            span{
+                position:relative;
+                z-index:10;
+            }
             &:after{
                 content:' ';
                 position:absolute;
@@ -94,9 +98,10 @@ export default {
             &:hover{
                 cursor : pointer;
             }
-            &:hover:before{
+            &:before{
+                transition: 0.3s all ;
                 content: " ";
-                pointer-events: none;
+                z-index:2;
                 box-sizing: border-box;
                 position: absolute;
                 width: 98%;
@@ -104,8 +109,15 @@ export default {
                 left: 1%;
                 top: 0;
                 transform: skew(20deg);
-                background-color: rgba(188,188,188,.4);
-                border-bottom:5px solid;
+                background-color: rgba(0,0,0,0);
+                border-bottom:0px solid;
+                border-image: linear-gradient(#fff,#9FB723, rgba(124, 124, 124, 0.63), #9FB723,#fff) 250 50
+            }
+            &:hover:before{
+                content: " ";
+                box-sizing: border-box;
+                background-color: rgba(100,100,100,.5);
+                border-bottom:10px solid;
                 border-image: linear-gradient(#fff,#9FB723, rgba(124, 124, 124, 0.63), #9FB723,#fff) 250 50
             }
         }
