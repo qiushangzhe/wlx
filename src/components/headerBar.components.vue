@@ -58,7 +58,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 .header-bar {
-    height: 130px;
+    height: 100px;
     background-color: #000;
     text-align: left;
     position: relative;
@@ -70,7 +70,7 @@ export default {
     }
     ul.nav {
         left: 170px;
-        height: 100%;
+        height: 100px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -78,7 +78,8 @@ export default {
     .nav-item {
         color: #fff;
         display: inline-block;
-        height: 100%;
+        height: 100px;
+        line-height: 100px;
         padding: 0 25px;
         font-weight: 600;
         position: relative;
@@ -88,7 +89,6 @@ export default {
             z-index: 10;
             position: relative;
             display: table-cell;
-            height:100%;
             vertical-align: middle;
         }
         &:after {
