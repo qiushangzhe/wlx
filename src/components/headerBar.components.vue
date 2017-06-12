@@ -24,23 +24,28 @@ export default {
   data() {
     return {
       navdata: [{
-        name: '关于我们',
+        // name: '关于我们',
+        name:'aboutUs',
         target: 'aboutUs',
         choose: false
       }, {
-        name: '成功案例',
+        // name: '成功案例',
+        name: 'successCase',
         target: 'successCase',
         choose: false
       }, {
-        name: '我们遍布的足迹',
+        // name: '我们遍布的足迹',
+        name: 'ourRecord',
         target: 'ourRecord',
         choose: false
       }, {
-        name: '我们的理念',
+        // name: '我们的理念',
+        name: 'ourCulture',
         target: 'ourCulture',
         choose: false
       }, {
-        name: '联系我们',
+        // name: '联系我们',
+        name: 'contactUs',
         target: 'contactUs',
         choose: false
       }],
