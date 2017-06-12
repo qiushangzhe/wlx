@@ -59,29 +59,68 @@
     height: 100%;
     background-color: #eee;
     float: right;
-    // position:relative;
+
     .mainpic {
       width: 100%;
       height: 100%;
     }
 
     .pic-nav-content {
+      position: absolute;
+      width: 60%;
+      height: 100px;
+      bottom: 50px;
+      right: 50px;
+      background-color: rgba(0,0,0,.4);
+      overflow: hidden;
+      padding: 0 30px;
+
+      .arrow {
         position: absolute;
-        width: 60%;
-        height: 100px;
-        bottom: 50px;
-        right: 50px;
-        background-color: rgba(0,0,0,.4);
-        overflow: hidden;
+        top: 50%;
+        font-size: 40px;
+        color: #fff;
+        transform: translateY(-50%);
+        transition: all 0.3s;
+        z-index: 10;
+
+        &:hover {
+          cursor: pointer;
+          color: #aaa;
+        }
+      }
+
+      .left-arrow {
+        left: 10px;
+      }
+
+      .right-arrow {
+        right: 10px;
+      }
+
       .pic-nav {
-          position:absolute;
-        height:100%;
+        position: absolute;
+        height: 100%;
+        transition: all 0.3s;
+        z-index: 5;
+        .pic-choose{
+            img{
+                border:2px solid #ddd;
+            }
+        }
         .pic-nav-item {
           width: 150px;
           height: 80px;
           line-height: 80px;
           margin: 10px 5px;
-        display:inline-block;
+          display: inline-block;
+          transition: all 0.3s;
+          position: relative;
+          &:hover {
+            cursor: pointer;
+            bottom: 5px;
+          }
+
           img {
             width: 100%;
             height: 100%;
