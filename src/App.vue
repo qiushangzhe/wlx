@@ -7,9 +7,10 @@
 </template>
 
 <script>
-import headerBar from '@/components/headerBar.components'
-import footerBar from '@/components/footerBar.components'
+import headerBar from '@/components/headerBar.component'
+import footerBar from '@/components/footerBar.component'
 import './assets/font-awesome.css';
+import './common/main.css';
 export default {
   name: 'app',
   components: {

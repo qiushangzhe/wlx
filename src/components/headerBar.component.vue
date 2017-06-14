@@ -7,9 +7,9 @@
 -->
 <template>
 <div class="header-bar">
-  <img src="../assets/logo.png" alt="logo" class="header-logo">
+  <img src="../assets/logo.png" alt="logo" class="header-logo" v-on:click="backToHomePage()">
   <ul class="nav">
-    <li v-for="item in navdata" class="nav-item">
+    <li v-for="item in navdata" class="nav-item" v-on:click="pageChanged(item)">
       <span>{{item.name}}</span>
     </li>
   </ul>
@@ -24,28 +24,28 @@ export default {
   data() {
     return {
       navdata: [{
-        // name: '关于我们',
-        name:'aboutUs',
+        name: '关于我们',
+        // name:'aboutUs',
         target: 'aboutUs',
         choose: false
       }, {
-        // name: '成功案例',
-        name: 'successCase',
+        name: '成功案例',
+        // name: 'successCase',
         target: 'successCase',
         choose: false
       }, {
-        // name: '我们遍布的足迹',
-        name: 'ourRecord',
+        name: '我们遍布的足迹',
+        // name: 'ourRecord',
         target: 'ourRecord',
         choose: false
       }, {
-        // name: '我们的理念',
-        name: 'ourCulture',
+        name: '我们的理念',
+        // name: 'ourCulture',
         target: 'ourCulture',
         choose: false
       }, {
-        // name: '联系我们',
-        name: 'contactUs',
+        name: '联系我们',
+        // name: 'contactUs',
         target: 'contactUs',
         choose: false
       }],
@@ -53,9 +53,15 @@ export default {
     }
   },
   methods: {
-    clickSearch: function() {
-      this.isSearch = !this.isSearch;
-    }
+      clickSearch: function() {
+          this.isSearch = !this.isSearch;
+      },
+      pageChanged:function(item){
+          this.$router.push(item.target);
+      },
+      backToHomePage:function(){
+          this.$router.push('/');
+      }
   }
 }
 </script>
@@ -67,6 +73,9 @@ export default {
     background-color: #000;
     text-align: left;
     position: relative;
+    img{
+        cursor:pointer;
+    }
     .header-logo {
         margin-left: 50px;
         position: absolute;
