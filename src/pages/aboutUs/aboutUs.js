@@ -1,14 +1,15 @@
+import breadCrumbs from '@/components/breadcrumbs.component.vue'
 export default {
-    name: 'aboutUs',
-    data() {
-        return {
+	name: 'aboutUs',
+	data() {
+		return {
+			breadlist: [""]
+		}
+	},
+	methods: {
 
-        }
-    },
-    methods: {
-
-    },
-    components: {
-
-    }
+	},
+	components: {
+		"breadCrumbs": breadCrumbs
+	}
 }
