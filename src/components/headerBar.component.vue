@@ -35,7 +35,7 @@ export default {
       this.isSearch = !this.isSearch;
     },
     pageChanged: function(item) {
-      this.$router.push(item.name);
+      this.$router.push(item.path);
     },
     backToHomePage: function() {
       this.$router.push('/');
