@@ -18,29 +18,49 @@ import contactUs from '@/pages/contactUs/contactUs.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-    path: '/',
-    name: 'homePage',
-    component: homePage
-  }, {
-    path: '/aboutUs',
-    name: 'aboutUs',
-    component: aboutUs
-  }, {
-    path: '/successCase',
-    name: 'successCase',
-    component: successCase
-  }, {
-    path: '/ourRecord',
-    name: 'ourRecord',
-    component: ourRecord
-  }, {
-    path: '/ourCulture',
-    name: 'ourCulture',
-    component: ourCulture
-  }, {
-    path: '/contactUs',
-    name: 'contactUs',
-    component: contactUs
-  }]
+	routes: [{
+		path: '/',
+		component: homePage,
+		meta: {
+			realName: '首页'
+		}
+	}, {
+		path: '/aboutUs',
+		name: 'aboutUs',
+		component: aboutUs,
+		meta: {
+			realName: '关于我们'
+		}
+	}, {
+		path: '/successCase',
+		name: 'successCase',
+		component: successCase,
+		meta: {
+			realName: '成功案例'
+		}
+	}, {
+		path: '/ourRecord',
+		name: 'ourRecord',
+		component: ourRecord,
+		meta: {
+			realName: '我们遍布的足迹'
+		}
+	}, {
+		path: '/ourCulture',
+		name: 'ourCulture',
+		component: ourCulture,
+		meta: {
+			realName: '我们的理念'
+		}
+	}, {
+		path: '/contactUs',
+		name: 'contactUs',
+		component: contactUs,
+		meta: {
+			realName: '联系我们'
+		}
+	}, {
+		path: '*',
+		redirect: '/'
+	}]
 })

@@ -9,8 +9,8 @@
 <div class="header-bar">
   <img src="../assets/logo.png" alt="logo" class="header-logo" v-on:click="backToHomePage()">
   <ul class="nav">
-    <li v-for="item in navdata" class="nav-item" v-on:click="pageChanged(item)">
-      <span>{{item.name}}</span>
+    <li v-for="item in navdata" class="nav-item" v-on:click="pageChanged(item)" v-if="item.path!='*'&& item.path!='/'">
+      <span>{{item.meta.realName}}</span>
     </li>
   </ul>
   <input class="search-bar" v-bind:class="{'search-bar-click':isSearch}" />
@@ -21,47 +21,25 @@
 <script>
 export default {
   name: 'headerBar',
+  created: function() {
+    this.navdata = this.$router.options.routes;
+  },
   data() {
     return {
-      navdata: [{
-        name: '关于我们',
-        // name:'aboutUs',
-        target: 'aboutUs',
-        choose: false
-      }, {
-        name: '成功案例',
-        // name: 'successCase',
-        target: 'successCase',
-        choose: false
-      }, {
-        name: '我们遍布的足迹',
-        // name: 'ourRecord',
-        target: 'ourRecord',
-        choose: false
-      }, {
-        name: '我们的理念',
-        // name: 'ourCulture',
-        target: 'ourCulture',
-        choose: false
-      }, {
-        name: '联系我们',
-        // name: 'contactUs',
-        target: 'contactUs',
-        choose: false
-      }],
+      navdata: [],
       isSearch: false
     }
   },
   methods: {
-      clickSearch: function() {
-          this.isSearch = !this.isSearch;
-      },
-      pageChanged:function(item){
-          this.$router.push(item.target);
-      },
-      backToHomePage:function(){
-          this.$router.push('/');
-      }
+    clickSearch: function() {
+      this.isSearch = !this.isSearch;
+    },
+    pageChanged: function(item) {
+      this.$router.push(item.name);
+    },
+    backToHomePage: function() {
+      this.$router.push('/');
+    }
   }
 }
 </script>
@@ -73,8 +51,8 @@ export default {
     background-color: #000;
     text-align: left;
     position: relative;
-    img{
-        cursor:pointer;
+    img {
+        cursor: pointer;
     }
     .header-logo {
         margin-left: 50px;

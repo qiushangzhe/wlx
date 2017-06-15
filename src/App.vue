@@ -15,6 +15,12 @@ import './assets/font-awesome.css';
 import './common/main.css';
 export default {
   name: 'app',
+  created: function() {
+    this.$router.beforeEach((to, from, next) => {
+      //   this.$root.eventHub.$emit('routerChange', to);
+      next();
+    })
+  },
   components: {
     'headerBar': headerBar,
     'footerBar': footerBar

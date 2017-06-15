@@ -9,6 +9,11 @@ require('./common/reset.css');
 new Vue({
   el: '#app',
   router,
+  data: function() {
+    return {
+      eventHub: new Vue()
+    }
+  },
   template: '<App/>',
   components: { App }
 })

@@ -1,3 +1,4 @@
+import breadCrumbs from '@/components/breadcrumbs.component.vue'
 export default {
     name: 'ourCulture',
     data() {
@@ -9,6 +10,6 @@ export default {
 
     },
     components: {
-
+        "breadCrumbs": breadCrumbs
     }
 }
